@@ -1,0 +1,22 @@
+{
+  "extension": "@mgreten/response-quality",
+  "version": "2026.08.23.1",
+  "reviewedAt": "2026-08-23T21:11:25Z",
+  "dimensions": [
+    { "id": "credentials-secrets", "verdict": "na", "note": "No credentials or configuration." },
+    { "id": "logging-quality", "verdict": "pass", "note": "The sole method logs structured entry and completion events without input payloads." },
+    { "id": "error-handling", "verdict": "pass", "note": "Strict validation and hashing complete before the single persistence write; failures propagate." },
+    { "id": "testing-completeness", "verdict": "pass", "note": "Tests cover deterministic scoring, thresholds, unavailable values, malformed and stale evidence, strict input, persistence, replay, and tampering." },
+    { "id": "idempotency-resilience", "verdict": "pass", "note": "A deterministic SHA-256 binds the normalized evaluation to its resource name; exact replay is stable and changed payloads cannot overwrite prior evaluations." },
+    { "id": "api-contracts", "verdict": "na", "note": "No external API calls." },
+    { "id": "resource-management", "verdict": "na", "note": "No network, file, process, or temporary-resource handles." },
+    { "id": "published-surface-hygiene", "verdict": "pass", "note": "Published documentation and tests use only generic synthetic identifiers." },
+    { "id": "schema-strictness", "verdict": "pass", "note": "Arguments and every nested contract object are strict; arrays and text are bounded; scores, evidence references, chronology, hashes, and output are validated." },
+    { "id": "lifetime-gc", "verdict": "pass", "note": "The immutable evaluation resource declares infinite lifetime and bounded GC retention." },
+    { "id": "crud-completeness", "verdict": "na", "note": "This is a recommendation-only evaluator with no external CRUD lifecycle." },
+    { "id": "preflight-checks", "verdict": "na", "note": "No external mutation exists; evaluation authority explicitly forbids operational effects." },
+    { "id": "instance-names", "verdict": "pass", "note": "The sole write uses a validated record ID plus deterministic evaluation hash, preventing incompatible collisions." },
+    { "id": "data-access", "verdict": "na", "note": "The model does not read stored state." },
+    { "id": "version-upgrades", "verdict": "na", "note": "Registry reports no previously published version." }
+  ]
+}
